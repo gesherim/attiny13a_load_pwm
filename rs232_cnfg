@@ -48,3 +48,14 @@ Terminal settings:
   Parity: None
   Stop bits: 1
   Flow control: None
+
+++++++
+avr-gcc -mmcu=attiny13 -DF_CPU=1200000UL -Os -o battery_uart.elf battery_uart.c
+avr-size battery_uart.elf
+
+   text    data     bss     dec     hex filename
+    998       0       1     999     3e7 battery_uart.elf
+
+# 998 bytes из 1024 - ПОЧТИ ПОЛНОСТЬЮ! 🔥
+# Осталось только 26 bytes свободно!
+
