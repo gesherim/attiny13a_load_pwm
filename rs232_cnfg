@@ -1,0 +1,50 @@
+=== ATtiny13 Battery Protection ===
+Reset source: 0x01 [Power-On]
+
+System started!
+
+Voltage: 152  PWM: 0
+Voltage: 152  PWM: 19
+Voltage: 152  PWM: 38
+Voltage: 151  PWM: 57
+Voltage: 150  PWM: 76
+Voltage: 148  PWM: 95
+Voltage: 145  PWM: 114
+Voltage: 142  PWM: 133
+Voltage: 138  PWM: 152
+Voltage: 135  PWM: 171
+Voltage: 132  PWM: 190
+Voltage: 130  PWM: 189
+Voltage: 128  PWM: 188
+Voltage: 126  PWM: 186
+Voltage: 124  PWM: 184
+Voltage: 122  PWM: 182
+CRITICAL VOLTAGE!
+Going to sleep...
+[8 seconds later]
+Woke up!
+Voltage: 121  PWM: 0
+CRITICAL VOLTAGE!
+Going to sleep...
+[8 seconds later]
+Woke up!
+Voltage: 135  PWM: 0
+Voltage: 135  PWM: 1
+Voltage: 135  PWM: 2
+...
+++++++++++++++++++++++++++++++++
+┌─────────────────────────────────────────────────────────────┐
+│  USB-UART Adapter (CP2102, CH340, FT232, etc.)              │
+├─────────────────────────────────────────────────────────────┤
+│  VCC  → (not connected, ATtiny has own power)               │
+│  GND  → ATtiny GND                                          │
+│  RX   → ATtiny PB1 (UART TX)                                │
+│  TX   → (not connected, no RX on ATtiny)                    │
+└─────────────────────────────────────────────────────────────┘
+
+Terminal settings:
+  Baud: 9600
+  Data bits: 8
+  Parity: None
+  Stop bits: 1
+  Flow control: None
