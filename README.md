@@ -30,13 +30,13 @@
  * 
  *                           ATtiny13A DIP-8
  *                          ┌─────────────┐
- *                   RESET ─┤1  PB5   VCC├─ 8  VCC (+5V)
+ *                   RESET ─┤1  PB5    VCC├─ 8  VCC (+5V)
  *                          │             │
- *          Status LED (S) ─┤2  PB3   PB2├─ 7  Heartbeat + HW Watchdog ⚡
+ *          Status LED (S) ─┤2  PB3    PB2├─ 7  Heartbeat + HW Watchdog ⚡
  *                          │             │
- *      Battery Voltage (A) ─┤3  PB4   PB1├─ 6  PWM Load 2 (L2)
+ *      Battery Voltage (A)─┤3  PB4    PB1├─ 6  PWM Load 2 (L2)
  *                          │             │
- *                     GND ─┤4  GND   PB0├─ 5  PWM Load 1 (L1)
+ *                     GND ─┤4  GND    PB0├─ 5  PWM Load 1 (L1)
  *                          └─────────────┘
  * 
  * ═══════════════════════════════════════════════════════════════════════════
@@ -55,7 +55,7 @@
  * 
  *  5V Regulator OUT ──┬── ATtiny VCC (Pin 8)
  *                     │
- *                     └──[100µF]──┬──[100nF]── GND
+ *         GND──[100nF]┼──[100µF]──│ 
  *                                 │
  *                                GND
  * 
@@ -166,20 +166,20 @@
  * │  ⚠️ POWERED FROM VCC_LOADS (via Dead Man's Switch!)                     │
  * └─────────────────────────────────────────────────────────────────────────┘
  * 
- *  PB0 (Pin 5) ──[1kΩ]──┬──[10kΩ to GND]──┤Gate
+ *  PB0 (Pin 5) ──[1kΩ]──┬──[10kΩ to GND]───┤Gate
  *                       │                  │ N-MOSFET (IRLZ44N)
  *                    [100nF]         Load 1├┤Drain
  *                       │                  │
- *                      GND          VCC_LOADS┘ ← from Dead Man's Switch!
- *                                           │
+ *                      GND       VCC_LOADS ┘← from Dead Man's Switch!
+ *                                          │
  *                                      GND (Source)
  * 
- *  PB1 (Pin 6) ──[1kΩ]──┬──[10kΩ to GND]──┤Gate
+ *  PB1 (Pin 6) ──[1kΩ]──┬──[10kΩ to GND]───┤Gate
  *                       │                  │ N-MOSFET (IRLZ44N)
  *                    [100nF]         Load 2├┤Drain
  *                       │                  │
- *                      GND          VCC_LOADS┘ ← from Dead Man's Switch!
- *                                           │
+ *                      GND       VCC_LOADS ┘← from Dead Man's Switch!
+ *                                          │
  *                                      GND (Source)
  * 
  * Components:
