@@ -59,3 +59,23 @@ avr-size battery_uart.elf
 # 998 bytes из 1024 - ПОЧТИ ПОЛНОСТЬЮ! 🔥
 # Осталось только 26 bytes свободно!
 
+ЕСЛИ НЕ ВЛЕЗАЕТ - УРЕЗАННАЯ ВЕРСИЯ:
+// Убрать подробные сообщения, оставить только цифры:
+
+void debug_print(uint8_t voltage, uint8_t pwm) {
+    uart_tx_byte('V');
+    uart_tx_u8(voltage);
+    uart_tx_byte(' ');
+    uart_tx_byte('P');
+    uart_tx_u8(pwm);
+    uart_tx_nl();
+}
+
+// Вывод:
+// V152 P0
+// V151 P19
+// V150 P38
+// ...
+
+// Экономия: ~200 bytes
+
